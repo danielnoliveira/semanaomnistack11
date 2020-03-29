@@ -1,11 +1,15 @@
 const express = require('express');
 const routes = require('./routes');
 const cors = require('cors');
+const {errors} = require('celebrate');
 const app = express();
 
 app.use(cors());
 app.use(express.json());//para entender o conteudo do body
 app.use(routes);
+app.use(errors());
+
+module.exports = app;
 /**
  *  Rota / Recurso
  */
@@ -35,4 +39,3 @@ app.use(routes);
     *  Driver:  select * from users
     * Query builder(Javascript): table('users').select('*').where()
     */
-app.listen(3333);
