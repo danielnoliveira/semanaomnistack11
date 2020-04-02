@@ -1,6 +1,6 @@
 const axios = require('axios');
 const api = axios.create({
-    baseURL:'http://localhost:3333',
+    baseURL:'https://guarded-reaches-12590.herokuapp.com/',
 });
 
 export default api;
